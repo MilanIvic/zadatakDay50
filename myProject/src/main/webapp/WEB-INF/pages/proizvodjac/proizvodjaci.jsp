@@ -26,6 +26,7 @@
 							<td>${pro.maticniBroj}</td>
 							<td>${pro.adresa}</td>
 							<td>${pro.mesto}</td>
+							<td><a href="/myProject/app/proizvodjac/view?pib=${pro.pib}">Prikazi</a></td>
 						</tr>
 					</c:forEach>	
 				</tbody>
