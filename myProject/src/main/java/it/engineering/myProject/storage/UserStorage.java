@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.engineering.myProject.database.UserCRUD;
+import it.engineering.myProject.domain.Proizvodjac;
 import it.engineering.myProject.domain.User;
 
 
@@ -36,6 +37,7 @@ public class UserStorage {
 	public List<String> getloggedUsers() {
 		return loggedUsers;
 	}
+	
 }
 
 

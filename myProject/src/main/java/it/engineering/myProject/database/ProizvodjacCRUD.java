@@ -30,13 +30,13 @@ public class ProizvodjacCRUD {
 		em.getTransaction().commit();
 		em.close();
 	}
-	public void delete(Proizvodjac proiz) {
+	public void delete(Long id) {
 		EntityManager em = MyEntityManagerFactory.getEntityManagerFactory()
 				.createEntityManager();
 		
 		em.getTransaction().begin();
 		
-		Proizvodjac pro = em.find(Proizvodjac.class,proiz.getPib());
+		Proizvodjac pro = em.find(Proizvodjac.class,id);
 		if(pro !=null) {
 			em.remove(pro);
 		}
