@@ -40,7 +40,7 @@ public class Mesto {
 
 	@Override
 	public String toString() {
-		return "Mesto [pttBroj=" + pttBroj + ", naziv=" + naziv + "]";
+		return pttBroj + ", " + naziv;
 	}
 
 	

@@ -3,7 +3,7 @@
 
 <%@page isELIgnored="false"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<c:url value="/app/proizvodjac" var="pro"/>
 <html>
 <body>
 	
@@ -11,7 +11,9 @@
 		<h2>Dobro dosli, uspesno ste se prijavili na aplikaciju</h2>
 		<article>
 			<div>
-				Ovo je pocetna stranica koja se prikazuje korisniku nakon prijave na sistem!
+				<nav>
+					<a href="${pro}">Prikazi sve proizvodjace</a>
+				</nav>
 			</div>
 		</article>
 	</main>
