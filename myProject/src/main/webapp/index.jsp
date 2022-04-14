@@ -9,7 +9,7 @@
 	<h2>Dobro dosli</h2>
 	
 	<div>
-		<c:url value="/application/login" var="urlLogin"/>
+		<c:url value="/app/login" var="urlLogin"/>
 		<a href="${urlLogin}">Prijavi se</a>
 	</div>
 </body>

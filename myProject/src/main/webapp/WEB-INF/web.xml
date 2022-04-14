@@ -4,4 +4,15 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+   <servlet>
+   	<servlet-name>FrController</servlet-name>
+   	<display-name>FrController</display-name>
+   	<description></description>
+   	<servlet-class>it.engineering.myProject.srvlt.FrController</servlet-class>
+   </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>FrController</servlet-name>
+  	<url-pattern>/app/*</url-pattern>
+  </servlet-mapping>
 </web-app>

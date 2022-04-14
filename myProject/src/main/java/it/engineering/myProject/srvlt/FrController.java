@@ -1,4 +1,4 @@
-package it.engineering.web.simplewebapp.servlet;
+package it.engineering.myProject.srvlt;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,22 +6,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import it.engineering.web.simplewebapp.controller.ApplicationController;
-
-
+import it.engineering.myProject.contr.ApplicationController;
 
 /**
- * Servlet implementation class FrontController
+ * Servlet implementation class FrController
  */
-public class FrontController extends HttpServlet {
+public class FrController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private ApplicationController applicationController;
-       
+	private ApplicationController applicationController;   
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FrontController() {
+    public FrController() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -42,11 +40,12 @@ public class FrontController extends HttpServlet {
 		String page = applicationController.processRequest(request, response);
 		request.getRequestDispatcher(page).forward(request, response);
 	}
-
+	
 	@Override
 	public void init() throws ServletException {
 		super.init();
 		applicationController = new ApplicationController();
-		System.out.println("========================= CREATED APPLICATION CONTRILLER =====================");
 	}
+
+
 }
