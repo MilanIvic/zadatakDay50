@@ -2,6 +2,7 @@ package it.engineering.myProject.actionfactory;
 
 import it.engineering.myProject.action.AbstractAction;
 import it.engineering.myProject.action.proizvodjac.ProizvodjacEditOrRemoveAction;
+import it.engineering.myProject.action.proizvodjac.ProizvodjacSaveOrUpdateAction;
 import it.engineering.myProject.action.proizvodjac.ProizvodjacViewAction;
 import it.engineering.myProject.action.proizvodjac.ProizvodjaciAction;
 import it.engineering.myProject.actionLogin.LoginGetAction;
@@ -18,7 +19,12 @@ public class ActionFactory {
 			if (method.equalsIgnoreCase("POST")) action = new LoginPostAction();
 			break;
 		case MyConstants.PATH_PROIZVODJACI:
-			action = new ProizvodjaciAction();
+			if(method.equalsIgnoreCase("GET")) {
+				action = new ProizvodjaciAction();
+			}
+			if(method.equalsIgnoreCase("POST")) {
+				action = new ProizvodjacSaveOrUpdateAction();
+			}
 			break;
 		case MyConstants.PATH_PROIZVODJAC_VIEW:
 			action = new ProizvodjacViewAction();

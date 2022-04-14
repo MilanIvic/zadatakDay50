@@ -17,6 +17,17 @@ public class ProizvodjacEditOrRemoveAction extends AbstractAction{
 			request.setAttribute("proizvodjaci", ProizvodjacStorage.getInstance().getAllPro());
 			return MyConstants.PAGE_PROIZVODJACI;
 		}
+		if(request.getParameter("button").equals("Izmeni")) {
+			Proizvodjac pro = ProizvodjacStorage.getInstance().getProizvodjac(Long.parseLong(request.getParameter("pib")));
+			if(pro != null) {
+				request.setAttribute("pro", pro);
+				return MyConstants.PAGE_PROIZVODJAC_EDIT;
+			}
+			else {
+				request.setAttribute("proizvodjaci", ProizvodjacStorage.getInstance().getAllPro());
+				return MyConstants.PAGE_PROIZVODJACI;
+			}
+		}
 		return null;
 	}
 
