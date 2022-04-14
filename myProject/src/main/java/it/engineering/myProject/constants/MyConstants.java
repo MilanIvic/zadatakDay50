@@ -11,4 +11,7 @@ public interface MyConstants {
 	
 	public static final String PAGE_PROIZVODJAC_VIEW="/WEB-INF/pages/proizvodjac/proizvodjac-view.jsp";
 	public static final String PATH_PROIZVODJAC_VIEW="/proizvodjac/view";
+	
+	public static final String PAGE_PROIZVODJAC_EDIT="/WEB-INF/pages/proizvodjac/proizvodjac-edit.jsp";
+	public static final String PATH_PROIZVODJAC_EDIT_DELETE="/proizvodjac/edit_or_delete";
 }

@@ -1,6 +1,7 @@
 package it.engineering.myProject.actionfactory;
 
 import it.engineering.myProject.action.AbstractAction;
+import it.engineering.myProject.action.proizvodjac.ProizvodjacEditOrRemoveAction;
 import it.engineering.myProject.action.proizvodjac.ProizvodjacViewAction;
 import it.engineering.myProject.action.proizvodjac.ProizvodjaciAction;
 import it.engineering.myProject.actionLogin.LoginGetAction;
@@ -21,6 +22,9 @@ public class ActionFactory {
 			break;
 		case MyConstants.PATH_PROIZVODJAC_VIEW:
 			action = new ProizvodjacViewAction();
+			break;
+		case MyConstants.PATH_PROIZVODJAC_EDIT_DELETE:
+			action = new ProizvodjacEditOrRemoveAction();
 			break;
 		}
 		

@@ -12,7 +12,7 @@
 	<h2>Podaci o proizvodjacu</h2>
 	<article>
 		<div>
-			<form action="" method="">
+			<form action="/myProject/app/proizvodjac/edit_or_delete" method="GET">
 				<label>Pib</label>
 				<input type="number" name="pib" value="${pro.pib}" readonly="readonly"/>
 				<br>
