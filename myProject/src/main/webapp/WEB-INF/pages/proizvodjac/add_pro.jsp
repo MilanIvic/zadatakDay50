@@ -6,25 +6,31 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Izmena proizvodjaca</title>
+<title>Dodaj proizvodjaca</title>
+<jsp:include page="/WEB-INF/pages/style.jsp" flush="true"/>
 </head>
 <body>
-	<h2>Unesite promene</h2>
+<main>
+	<h2>Unesite podatke</h2>
 	<article>
 		<div>
 			<c:url var="link" value="/app//proizvodjac"></c:url>
 			
 			<form action="${link}" method="POST">
 				<label>pib</label>
+				<br>
 				<input type="text" name="pib" placeholder = "pib"/>
 				<br>
 				<label>Maticni broj</label>
+				<br>
 				<input type="text" name="matBr" placeholder="maticni broj"/>
 				<br>
 				<label>Adresa</label>
+				<br>
 				<input type="text" name="adress" placeholder = "adresa"/>
 				<br>
 				<label>Mesto</label>
+				<br>
 				<input type="text" name="mesto" placeholder = "ptt broj, mesto"/>
 				
 				<div>
@@ -40,6 +46,6 @@
 		
 	
 	</article>
-
+</main>
 </body>
 </html>

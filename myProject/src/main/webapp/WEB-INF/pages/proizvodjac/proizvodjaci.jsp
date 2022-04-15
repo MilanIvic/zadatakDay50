@@ -3,10 +3,10 @@
 
 <%@page isELIgnored="false"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<jsp:include page="/WEB-INF/pages/style.jsp" flush="true"/>
 <html>
 <body>
-	
+	<main>
 	<h2>Svi proizvodjaci</h2>
 	<article>
 		<div>
@@ -17,6 +17,7 @@
 						<th>Maticni broj</th>
 						<th>Adresa</th>
 						<th>Mesto</th>
+						<th>Detalji</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -36,5 +37,6 @@
 		<c:url value="/app/proizvodjac/add" var="proAdd"/>
 		<a href="${proAdd}">Dodaj proizvodjaca</a>
 	</article>
+</main>
 </body>
 </html>
