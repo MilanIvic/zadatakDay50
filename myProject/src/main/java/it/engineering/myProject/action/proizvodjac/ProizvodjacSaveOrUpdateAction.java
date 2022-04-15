@@ -42,9 +42,12 @@ public class ProizvodjacSaveOrUpdateAction extends AbstractAction{
 			request.setAttribute("proizvodjaci", ProizvodjacStorage.getInstance().getAllPro());
 			return MyConstants.PAGE_PROIZVODJACI;
 		}
-		
-		
-		return null;
+		else {
+			Proizvodjac newPro = new Proizvodjac(proPib, matBr, adresa, mesto);
+			ProizvodjacStorage.getInstance().addPro(newPro);
+			request.setAttribute("proizvodjaci", ProizvodjacStorage.getInstance().getAllPro());
+			return MyConstants.PAGE_PROIZVODJACI;
+		}
 	}
 
 }

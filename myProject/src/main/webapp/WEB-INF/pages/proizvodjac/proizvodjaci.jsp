@@ -33,6 +33,8 @@
 			
 			</table>
 		</div>
+		<c:url value="/app/proizvodjac/add" var="proAdd"/>
+		<a href="${proAdd}">Dodaj proizvodjaca</a>
 	</article>
 </body>
 </html>

@@ -28,6 +28,10 @@ public class ProizvodjacEditOrRemoveAction extends AbstractAction{
 				return MyConstants.PAGE_PROIZVODJACI;
 			}
 		}
+		if(request.getParameter("button").equals("Nazad")) {
+			request.setAttribute("proizvodjaci", ProizvodjacStorage.getInstance().getAllPro());
+			return MyConstants.PAGE_PROIZVODJACI;
+		}
 		return null;
 	}
 
