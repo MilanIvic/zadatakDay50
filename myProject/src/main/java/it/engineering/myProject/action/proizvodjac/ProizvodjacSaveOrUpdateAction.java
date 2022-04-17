@@ -7,6 +7,7 @@ import it.engineering.myProject.action.AbstractAction;
 import it.engineering.myProject.constants.MyConstants;
 import it.engineering.myProject.domain.Mesto;
 import it.engineering.myProject.domain.Proizvodjac;
+import it.engineering.myProject.storage.MestoStorage;
 import it.engineering.myProject.storage.ProizvodjacStorage;
 
 public class ProizvodjacSaveOrUpdateAction extends AbstractAction{
@@ -18,21 +19,16 @@ public class ProizvodjacSaveOrUpdateAction extends AbstractAction{
 		String adresa = request.getParameter("adress");
 		String mestoStr = request.getParameter("mesto");
 		String mestoPtt="";
-		String mestoNaziv="";
 		for(int i=0; i<mestoStr.length();i++) {
 			char ch = mestoStr.charAt(i);
-			if(Character.isLetter(ch)) {
-				mestoNaziv = mestoNaziv+ch;
-			}
-			else if(Character.isDigit(ch)) {
+			if(Character.isDigit(ch)) {
 				mestoPtt = mestoPtt+ch;
 			}
 			else {
 				continue;
 			}
 		}
-		Long pttBroj = Long.parseLong(mestoPtt);
-		Mesto mesto = new Mesto(pttBroj,mestoNaziv);
+		Mesto mesto = MestoStorage.getInstance().getMesto(Long.parseLong(mestoPtt));
 		Proizvodjac pro = ProizvodjacStorage.getInstance().getProizvodjac(proPib);
 		if(pro !=null) {
 			pro.setAdresa(adresa);

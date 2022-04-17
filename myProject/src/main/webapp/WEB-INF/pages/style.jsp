@@ -15,6 +15,7 @@ header{
 }
 footer{
 	background-color: darkblue;
+	text-align: center;
 }
 main{
    display: flex;
@@ -62,6 +63,13 @@ input{
    border-radius: 7px;
    width: 10rem;
    box-shadow: 2px 2px var(--dark-color);
+}
+select{
+	padding: 7px;
+   	margin-bottom: 15px;
+  	border-radius: 7px;
+   	width: 10rem;
+   	box-shadow: 2px 2px var(--dark-color);
 }
 a{
 	background-color: lightblue;

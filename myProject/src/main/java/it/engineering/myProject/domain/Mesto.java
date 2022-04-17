@@ -3,8 +3,10 @@ package it.engineering.myProject.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQuery(name="Mesto.findAll", query="SELECT m FROM Mesto m")
 public class Mesto {
 	@Id
 	@Column(name="ptt_broj")
@@ -40,7 +42,7 @@ public class Mesto {
 
 	@Override
 	public String toString() {
-		return pttBroj + ", " + naziv;
+		return pttBroj + " " + naziv;
 	}
 
 	

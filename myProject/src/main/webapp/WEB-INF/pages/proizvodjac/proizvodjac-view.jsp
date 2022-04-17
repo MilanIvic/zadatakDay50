@@ -10,6 +10,9 @@
 <title>Prikaz proizvodjaca</title>
 </head>
 <body>
+<header>
+		<jsp:include page="/WEB-INF/fragment/login-user.jsp" flush="true"/>
+</header>
 <main>
 	<h2>Podaci o proizvodjacu</h2>
 	<article>
@@ -45,5 +48,6 @@
 	
 	</article>
 </main>
+<footer> Copyright 2022.</footer>
 </body>
 </html>

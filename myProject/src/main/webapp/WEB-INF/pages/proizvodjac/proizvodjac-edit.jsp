@@ -10,6 +10,9 @@
 <jsp:include page="/WEB-INF/pages/style.jsp" flush="true"/>
 </head>
 <body>
+<header>
+		<jsp:include page="/WEB-INF/fragment/login-user.jsp" flush="true"/>
+</header>
 <main>
 	<h2>Unesite promene</h2>
 	<article>
@@ -31,8 +34,11 @@
 				<br>
 				<label>Mesto</label>
 				<br>
-				<input type="text" name="mesto" value="${pro.mesto}"/>
-				
+				<select name="mesto">
+					<c:forEach items = "${mesta}" var = "m">
+						<option value="${m.pttBroj} ${m.naziv}" name="mesto">${m.pttBroj} ${m.naziv}</option>
+					</c:forEach>
+				</select>
 				<div>
 					<input type="submit" value="Potvrdi" name="buttonConf">
 				</div>
@@ -46,5 +52,6 @@
 	
 	</article>
 </main>
+<footer> Copyright 2022.</footer>
 </body>
 </html>

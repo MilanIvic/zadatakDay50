@@ -6,6 +6,9 @@
 <jsp:include page="/WEB-INF/pages/style.jsp" flush="true"/>
 <html>
 <body>
+<header>
+		<jsp:include page="/WEB-INF/fragment/login-user.jsp" flush="true"/>
+	</header>
 	<main>
 	<h2>Svi proizvodjaci</h2>
 	<article>
@@ -38,5 +41,6 @@
 		<a href="${proAdd}">Dodaj proizvodjaca</a>
 	</article>
 </main>
+<footer> Copyright 2022.</footer>
 </body>
 </html>

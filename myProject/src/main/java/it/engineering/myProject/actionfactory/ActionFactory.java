@@ -1,6 +1,7 @@
 package it.engineering.myProject.actionfactory;
 
 import it.engineering.myProject.action.AbstractAction;
+import it.engineering.myProject.action.logout.LogoutAction;
 import it.engineering.myProject.action.proizvodjac.AddProAction;
 import it.engineering.myProject.action.proizvodjac.ProizvodjacEditOrRemoveAction;
 import it.engineering.myProject.action.proizvodjac.ProizvodjacSaveOrUpdateAction;
@@ -9,6 +10,7 @@ import it.engineering.myProject.action.proizvodjac.ProizvodjaciAction;
 import it.engineering.myProject.actionLogin.LoginGetAction;
 import it.engineering.myProject.actionLogin.LoginPostAction;
 import it.engineering.myProject.constants.MyConstants;
+
 
 public class ActionFactory {
 	public static AbstractAction createAction(String method, String path) {
@@ -35,6 +37,9 @@ public class ActionFactory {
 			break;
 		case MyConstants.PATH_ADD_PRO:
 			action = new AddProAction();
+			break;
+		case MyConstants.PATH_LOGOUT:
+			action = new LogoutAction();
 			break;
 		default:
 			break;

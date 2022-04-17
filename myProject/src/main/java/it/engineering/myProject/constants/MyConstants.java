@@ -17,5 +17,8 @@ public interface MyConstants {
 	
 	public static final String PAGE_ADD_PRO="/WEB-INF/pages/proizvodjac/add_pro.jsp";
 	public static final String PATH_ADD_PRO="/proizvodjac/add";
+	
+	public static final String PATH_LOGOUT="/logout";
+	public static final String PAGE_INDEX="/index.jsp";
 
 }

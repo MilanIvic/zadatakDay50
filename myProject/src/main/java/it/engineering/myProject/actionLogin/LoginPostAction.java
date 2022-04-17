@@ -26,6 +26,7 @@ public class LoginPostAction extends AbstractAction{
 				User loginUser  = user.clone();
 				//user.setPassword(null);
 				session.setAttribute("loginUser", loginUser);
+				System.out.println(session.getAttribute("loginUser"));
 				return MyConstants.PAGE_HOME;
 			}
 			else {
@@ -41,9 +42,9 @@ public class LoginPostAction extends AbstractAction{
 	}
 
 	private boolean logged(User user) {
-		List<String>listaLog = UserStorage.getInstance().getloggedUsers();
-		for(String logUser : listaLog) {
-			if(logUser.equals(user.getUsername())) {
+		List<User>listaLog = UserStorage.getInstance().getloggedUsers();
+		for(User logUser : listaLog) {
+			if(logUser.equals(user)) {
 				return true;
 			}
 		}

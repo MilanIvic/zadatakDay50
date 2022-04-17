@@ -10,14 +10,14 @@ import it.engineering.myProject.domain.User;
 
 public class UserStorage {
 	private List<User>users;
-	private List<String>loggedUsers;
+	private List<User>loggedUsers;
 	private static UserCRUD userCrud;
 	private static UserStorage instance;
 	
 	public UserStorage(){
 		userCrud = new UserCRUD();
 		users = new ArrayList<User>();
-		loggedUsers = new ArrayList<String>();
+		loggedUsers = new ArrayList<User>();
 	}
 	
 	
@@ -32,10 +32,19 @@ public class UserStorage {
 		return users;
 	}
 	public void addLogged(User user){
-		loggedUsers.add(user.getUsername());
+		loggedUsers.add(user);
 	}
-	public List<String> getloggedUsers() {
+	public List<User> getloggedUsers() {
 		return loggedUsers;
+	}
+	public void logout(User user) {
+		User remUser=null;
+		for(User userL : loggedUsers) {
+			if(userL.getUsername().equals(user.getUsername())) {
+				remUser = userL;
+			}
+		}
+		loggedUsers.remove(remUser);
 	}
 	
 }
