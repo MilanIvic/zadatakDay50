@@ -14,7 +14,7 @@ public class ApplicationController {
 		System.out.println("METHOD: " + method);
 		System.out.println("PATH: " + path);
 		
-		AbstractAction action = ActionFactory.createAction(method, path);
+		AbstractAction action = ActionFactory.createAction(request, method, path);
 		
 		return action.executeRequest(request, response);
 	}
