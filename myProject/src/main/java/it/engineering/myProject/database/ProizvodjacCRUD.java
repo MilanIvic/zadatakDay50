@@ -30,7 +30,7 @@ public class ProizvodjacCRUD {
 		em.getTransaction().commit();
 		em.close();
 	}
-	public void delete(Long id) {
+	public void delete(String id) {
 		EntityManager em = MyEntityManagerFactory.getEntityManagerFactory()
 				.createEntityManager();
 		
@@ -43,7 +43,7 @@ public class ProizvodjacCRUD {
 		em.getTransaction().commit();
 		em.close();
 	}
-	public Proizvodjac getById(Long id) {
+	public Proizvodjac getById(String id) {
 		EntityManager em = MyEntityManagerFactory.getEntityManagerFactory()
 				.createEntityManager();
 		

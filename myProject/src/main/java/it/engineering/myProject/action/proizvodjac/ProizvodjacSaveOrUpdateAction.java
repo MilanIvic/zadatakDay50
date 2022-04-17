@@ -14,7 +14,7 @@ public class ProizvodjacSaveOrUpdateAction extends AbstractAction{
 
 	@Override
 	public String executeRequest(HttpServletRequest request, HttpServletResponse response) {
-		Long proPib = Long.parseLong(request.getParameter("pib"));
+		String proPib = request.getParameter("pib");
 		String matBr = request.getParameter("matBr");
 		String adresa = request.getParameter("adress");
 		String mestoStr = request.getParameter("mesto");

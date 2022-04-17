@@ -13,7 +13,7 @@ public class ProizvodjacViewAction extends AbstractAction{
 
 	@Override
 	public String executeRequest(HttpServletRequest request, HttpServletResponse response) {
-		Proizvodjac pro = ProizvodjacStorage.getInstance().getProizvodjac(Long.parseLong(request.getParameter("pib")));
+		Proizvodjac pro = ProizvodjacStorage.getInstance().getProizvodjac(request.getParameter("pib"));
 		if(pro != null) {
 			Mesto mesto = pro.getMesto();
 			request.setAttribute("mesto", mesto);

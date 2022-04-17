@@ -21,7 +21,7 @@
 			<form action="/myProject/app/proizvodjac/edit_or_delete" method="GET">
 				<label>Pib</label>
 				<br>
-				<input type="number" name="pib" value="${pro.pib}" readonly="readonly"/>
+				<input type="text" name="pib" value="${pro.pib}" readonly="readonly"/>
 				<br>
 				<label>Maticni broj</label>
 				<br>

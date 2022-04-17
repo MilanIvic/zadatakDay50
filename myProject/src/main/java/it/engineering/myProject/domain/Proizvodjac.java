@@ -12,7 +12,7 @@ import javax.persistence.NamedQuery;
 @NamedQuery(name="Proizvodjac.findAll", query="SELECT p FROM Proizvodjac p")
 public class Proizvodjac {
 	@Id
-	private Long pib;
+	private String pib;
 	
 	@Column(name="maticni_broj")
 	private String maticniBroj;
@@ -27,7 +27,7 @@ public class Proizvodjac {
 		super();
 	}
 	
-	public Proizvodjac(Long pib, String maticniBroj, String adresa, Mesto mesto) {
+	public Proizvodjac(String pib, String maticniBroj, String adresa, Mesto mesto) {
 		super();
 		this.pib = pib;
 		this.maticniBroj = maticniBroj;
@@ -37,11 +37,11 @@ public class Proizvodjac {
 
 
 
-	public Long getPib() {
+	public String getPib() {
 		return pib;
 	}
 
-	public void setPib(Long pib) {
+	public void setPib(String pib) {
 		this.pib = pib;
 	}
 

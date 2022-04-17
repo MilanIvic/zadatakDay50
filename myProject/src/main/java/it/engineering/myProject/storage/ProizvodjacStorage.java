@@ -30,13 +30,13 @@ public class ProizvodjacStorage {
 	public void addPro(Proizvodjac pro) {
 		proCrud.save(pro);
 	}
-	public void removePro(Long id) {
+	public void removePro(String id) {
 		proCrud.delete(id);
 	}
 	public void update(Proizvodjac pro) {
 		proCrud.updatePro(pro);
 	}
-	public Proizvodjac getProizvodjac(Long id) {
+	public Proizvodjac getProizvodjac(String id) {
 		Proizvodjac pro = proCrud.getById(id);
 		return pro;
 	}
