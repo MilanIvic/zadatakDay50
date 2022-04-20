@@ -20,5 +20,10 @@ public interface MyConstants {
 	
 	public static final String PATH_LOGOUT="/logout";
 	public static final String PAGE_INDEX="/index.jsp";
+	
+	public static final String PAGE_PRO_CONFIRM="/WEB-INF/pages/proizvodjac/page-confirm.jsp";
+	public static final String PATH_PRO_CONFIRM="/proizvodjac/confirm";
+	
+	public static final String PATH_PRO_DELETE="/proizvodjac/delete";
 
 }

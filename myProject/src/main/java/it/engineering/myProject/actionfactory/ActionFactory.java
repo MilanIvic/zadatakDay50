@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import it.engineering.myProject.action.AbstractAction;
 import it.engineering.myProject.action.logout.LogoutAction;
 import it.engineering.myProject.action.proizvodjac.AddProAction;
+import it.engineering.myProject.action.proizvodjac.ProizvodjacDeleteAction;
 import it.engineering.myProject.action.proizvodjac.ProizvodjacEditOrRemoveAction;
 import it.engineering.myProject.action.proizvodjac.ProizvodjacSaveOrUpdateAction;
 import it.engineering.myProject.action.proizvodjac.ProizvodjacViewAction;
@@ -78,6 +79,14 @@ public class ActionFactory {
 			}
 			else {
 				action = new LogoutAction();
+			}
+			break;
+		case MyConstants.PATH_PRO_DELETE:
+			if(user == null) {
+				action = new IndexAction();
+			}
+			else {
+				action = new ProizvodjacDeleteAction();
 			}
 			break;
 		default:

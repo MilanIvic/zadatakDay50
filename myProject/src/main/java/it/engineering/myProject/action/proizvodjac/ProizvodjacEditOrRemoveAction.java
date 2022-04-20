@@ -17,9 +17,9 @@ public class ProizvodjacEditOrRemoveAction extends AbstractAction{
 	@Override
 	public String executeRequest(HttpServletRequest request, HttpServletResponse response) {
 		if(request.getParameter("button").equals("Obrisi")) {
-			ProizvodjacStorage.getInstance().removePro(request.getParameter("pib"));
-			request.setAttribute("proizvodjaci", ProizvodjacStorage.getInstance().getAllPro());
-			return MyConstants.PAGE_PROIZVODJACI;
+			Proizvodjac pro = ProizvodjacStorage.getInstance().getProizvodjac(request.getParameter("pib"));
+			request.setAttribute("pro", pro);
+			return MyConstants.PAGE_PRO_CONFIRM;
 		}
 		if(request.getParameter("button").equals("Izmeni")) {
 			Proizvodjac pro = ProizvodjacStorage.getInstance().getProizvodjac(request.getParameter("pib"));
