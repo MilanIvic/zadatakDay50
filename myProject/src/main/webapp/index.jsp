@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <%@page isELIgnored="false"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -8,10 +8,12 @@
 <body>
 
 <main>
-	<h2>Dobro dosli</h2>
-	<div id="link">
-		<c:url value="/app/login" var="urlLogin"/>
-		<a href="${urlLogin}">Prijavi se</a>
+	<div class="gradient">
+		<h2>Dobro došli</h2>
+		<div id="link">
+			<c:url value="/app/login" var="urlLogin"/>
+			<a href="${urlLogin}">Prijavi se</a>
+		</div>
 	</div>
 </main>
 </body>

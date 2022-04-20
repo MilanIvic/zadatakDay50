@@ -1,45 +1,42 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <%@page isELIgnored="false"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="/WEB-INF/pages/style.jsp" flush="true"/>
 <html>
 <body>
-<header>
+	<header>
 		<jsp:include page="/WEB-INF/fragment/login-user.jsp" flush="true"/>
 	</header>
 	<main>
-	<h2>Svi proizvodjaci</h2>
-	<article>
-		<div>
-			<table>
-				<thead>
-					<tr>
-						<th>PIB</th>
-						<th>Maticni broj</th>
-						<th>Adresa</th>
-						<th>Mesto</th>
-						<th>Detalji</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach items="${proizvodjaci}" var="pro">
+		<div class="gradient">
+			<h2>Svi proizvodjači</h2>
+				<table>
+					<thead>
 						<tr>
-							<td>${pro.pib}</td>
-							<td>${pro.maticniBroj}</td>
-							<td>${pro.adresa}</td>
-							<td>${pro.mesto}</td>
-							<td><a href="/myProject/app/proizvodjac/view?pib=${pro.pib}">Prikazi</a></td>
+							<th>PIB</th>
+							<th>Matični broj</th>
+							<th>Adresa</th>
+							<th>Mesto</th>
+							<th>Detalji</th>
 						</tr>
-					</c:forEach>	
-				</tbody>
-			
-			</table>
+					</thead>
+					<tbody>
+						<c:forEach items="${proizvodjaci}" var="pro">
+							<tr>
+								<td>${pro.pib}</td>
+								<td>${pro.maticniBroj}</td>
+								<td>${pro.adresa}</td>
+								<td>${pro.mesto}</td>
+								<td><a href="/myProject/app/proizvodjac/view?pib=${pro.pib}">Prikaži</a></td>
+							</tr>
+						</c:forEach>	
+					</tbody>
+				</table>
+				<c:url value="/app/proizvodjac/add" var="proAdd"/>
+				<a href="${proAdd}">Dodaj proizvodjača</a>
 		</div>
-		<c:url value="/app/proizvodjac/add" var="proAdd"/>
-		<a href="${proAdd}">Dodaj proizvodjaca</a>
-	</article>
 </main>
 <footer> Copyright 2022.</footer>
 </body>

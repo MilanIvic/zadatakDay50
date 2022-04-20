@@ -21,7 +21,8 @@ main{
    display: flex;
    flex-direction:column;
    height: 100vh;
-   background-image: url("https://www.itl.cat/pngfile/big/308-3089838_cuba-cars.jpg");
+   width: 100%;
+   background-color: aqua;
    background-size: cover;
    justify-content: center;
    align-items: center;
@@ -35,6 +36,7 @@ main{
    height: 100%;
    width: 100%;
    backdrop-filter: blur(5px);
+   flex-direction:column;
 }
 
 .container{
@@ -102,6 +104,12 @@ thead{
 	border 1px solid white;
 }
 td{
+	text-align:center;
     background-color: royalblue;
+}
+table{
+	width: 60%;
+	height:40%;
+	font-size:1.1rem;
 }
 </style>
