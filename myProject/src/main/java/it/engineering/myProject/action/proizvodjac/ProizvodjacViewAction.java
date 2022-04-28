@@ -18,11 +18,11 @@ public class ProizvodjacViewAction extends AbstractAction{
 			Mesto mesto = pro.getMesto();
 			request.setAttribute("mesto", mesto);
 			request.setAttribute("pro", pro);
-			return MyConstants.PAGE_PROIZVODJAC_VIEW;
+			return MyConstants.VIEW_PROIZVODJAC;
 		}
 		else {
 			request.setAttribute("proizvodjaci", ProizvodjacStorage.getInstance().getAllPro());
-			return MyConstants.PAGE_PROIZVODJACI;
+			return MyConstants.VIEW_PROIZVODJACI;
 		}
 		
 	}

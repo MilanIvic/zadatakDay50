@@ -11,7 +11,7 @@ public class IndexAction extends AbstractAction{
 	@Override
 	public String executeRequest(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		return MyConstants.PAGE_INDEX;
+		return MyConstants.VIEW_INDEX;
 	}
 
 }

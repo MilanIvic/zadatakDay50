@@ -3,7 +3,7 @@ package it.engineering.myProject.storage;
 import java.util.ArrayList;
 import java.util.List;
 
-import it.engineering.myProject.database.ProizvodjacCRUD;
+import it.engineering.myProject.database.impl.ProizvodjacCRUD;
 import it.engineering.myProject.domain.Proizvodjac;
 
 public class ProizvodjacStorage {

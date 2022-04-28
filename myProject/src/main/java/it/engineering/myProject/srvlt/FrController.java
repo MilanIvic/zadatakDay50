@@ -1,19 +1,31 @@
 package it.engineering.myProject.srvlt;
 
 import java.io.IOException;
+
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
+
 import it.engineering.myProject.contr.ApplicationController;
+import it.engineering.myProject.view.ViewResolver;
 
 /**
  * Servlet implementation class FrController
  */
+@Component
 public class FrController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ApplicationController applicationController;   
+	
+	@Autowired
+	ViewResolver viewResolver;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -37,8 +49,9 @@ public class FrController extends HttpServlet {
 	}
 	
 	private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String page = applicationController.processRequest(request, response);
-		request.getRequestDispatcher(page).forward(request, response);
+		String view = applicationController.processRequest(request, response);
+		//na osnovu pogleda vrati konkretnu stranicu korisniku
+		request.getRequestDispatcher(viewResolver.getPage(view)).forward(request, response);
 	}
 	
 	@Override
@@ -47,5 +60,12 @@ public class FrController extends HttpServlet {
 		applicationController = new ApplicationController();
 	}
 
-
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		super.init(config);
+		ApplicationContext applicationContext = 
+				(ApplicationContext) config.getServletContext().getAttribute("application-context");
+		AutowireCapableBeanFactory acbf = applicationContext.getAutowireCapableBeanFactory();
+		acbf.autowireBean(this);
+	}
 }

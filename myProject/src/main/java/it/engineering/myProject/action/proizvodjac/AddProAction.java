@@ -16,7 +16,7 @@ public class AddProAction extends AbstractAction{
 	public String executeRequest(HttpServletRequest request, HttpServletResponse response) {
 		List<Mesto> mesta= MestoStorage.getInstance().getAllMesto();
 		request.setAttribute("mesta", mesta);
-		return MyConstants.PAGE_ADD_PRO;
+		return MyConstants.VIEW_ADD_PRO;
 	}
 
 }

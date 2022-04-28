@@ -19,7 +19,7 @@ public class ProizvodjacEditOrRemoveAction extends AbstractAction{
 		if(request.getParameter("button").equals("Obrisi")) {
 			Proizvodjac pro = ProizvodjacStorage.getInstance().getProizvodjac(request.getParameter("pib"));
 			request.setAttribute("pro", pro);
-			return MyConstants.PAGE_PRO_CONFIRM;
+			return MyConstants.VIEW_CONFIRM;
 		}
 		if(request.getParameter("button").equals("Izmeni")) {
 			Proizvodjac pro = ProizvodjacStorage.getInstance().getProizvodjac(request.getParameter("pib"));
@@ -27,16 +27,16 @@ public class ProizvodjacEditOrRemoveAction extends AbstractAction{
 				List<Mesto> mesta = MestoStorage.getInstance().getAllMesto();
 				request.setAttribute("mesta", mesta);
 				request.setAttribute("pro", pro);
-				return MyConstants.PAGE_PROIZVODJAC_EDIT;
+				return MyConstants.VIEW_PROIZVODJAC_EDIT;
 			}
 			else {
 				request.setAttribute("proizvodjaci", ProizvodjacStorage.getInstance().getAllPro());
-				return MyConstants.PAGE_PROIZVODJACI;
+				return MyConstants.VIEW_PROIZVODJACI;
 			}
 		}
 		if(request.getParameter("button").equals("Nazad")) {
 			request.setAttribute("proizvodjaci", ProizvodjacStorage.getInstance().getAllPro());
-			return MyConstants.PAGE_PROIZVODJACI;
+			return MyConstants.VIEW_PROIZVODJACI;
 		}
 		return null;
 	}

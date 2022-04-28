@@ -15,11 +15,11 @@ public class ProizvodjacDeleteAction extends AbstractAction{
 		if(request.getParameter("button").equals("Da")) {
 				ProizvodjacStorage.getInstance().removePro(request.getParameter("pib"));
 				request.setAttribute("proizvodjaci", ProizvodjacStorage.getInstance().getAllPro());
-				return MyConstants.PAGE_PROIZVODJACI;
+				return MyConstants.VIEW_PROIZVODJACI;
 		}
 		else {
 			request.setAttribute("proizvodjaci", ProizvodjacStorage.getInstance().getAllPro());
-			return MyConstants.PAGE_PROIZVODJACI;
+			return MyConstants.VIEW_PROIZVODJACI;
 		}
 	}
 

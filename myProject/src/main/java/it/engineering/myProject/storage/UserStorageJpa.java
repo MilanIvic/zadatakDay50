@@ -3,33 +3,25 @@ package it.engineering.myProject.storage;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.sql.DataSource;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import it.engineering.myProject.database.impl.UserCRUD;
-import it.engineering.myProject.domain.Proizvodjac;
 import it.engineering.myProject.domain.User;
 
-@Component
-public class UserStorage {
+public class UserStorageJpa {
 	private List<User>users;
 	private List<User>loggedUsers;
-	@Autowired
 	private static UserCRUD userCrud;
-	private static UserStorage instance;
+	private static UserStorageJpa instance;
 	
-	public UserStorage(UserCRUD userCRUD){
-		this.userCrud = userCRUD;
+	public UserStorageJpa(){
+		userCrud = new UserCRUD();
 		users = new ArrayList<User>();
 		loggedUsers = new ArrayList<User>();
 	}
 	
 	
 	
-	public static UserStorage getInstance() {
-		if (instance == null) instance = new UserStorage(userCrud);
+	public static UserStorageJpa getInstance() {
+		if (instance == null) instance = new UserStorageJpa();
 		return instance;
 	}
 	
@@ -52,10 +44,4 @@ public class UserStorage {
 		}
 		loggedUsers.remove(remUser);
 	}
-	
 }
-
-
-
-
-

@@ -1,15 +1,16 @@
-package it.engineering.myProject.database;
+package it.engineering.myProject.database.impl;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import it.engineering.myProject.database.ProizvodjacDao;
 import it.engineering.myProject.domain.Mesto;
 import it.engineering.myProject.domain.Proizvodjac;
 import it.engineering.myProject.persistence.MyEntityManagerFactory;
 
 
-public class ProizvodjacCRUD {
+public class ProizvodjacCRUD implements ProizvodjacDao{
 	public void save(Proizvodjac proiz) {
 		EntityManager em = MyEntityManagerFactory.getEntityManagerFactory()
 				.createEntityManager();

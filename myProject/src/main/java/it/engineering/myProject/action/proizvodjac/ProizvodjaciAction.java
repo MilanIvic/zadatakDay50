@@ -12,7 +12,7 @@ public class ProizvodjaciAction extends AbstractAction{
 	@Override
 	public String executeRequest(HttpServletRequest request, HttpServletResponse response) {
 		request.setAttribute("proizvodjaci", ProizvodjacStorage.getInstance().getAllPro());
-		return MyConstants.PAGE_PROIZVODJACI;
+		return MyConstants.VIEW_PROIZVODJACI;
 	}
 
 }

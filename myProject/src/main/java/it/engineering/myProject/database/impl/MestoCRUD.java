@@ -1,13 +1,14 @@
-package it.engineering.myProject.database;
+package it.engineering.myProject.database.impl;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import it.engineering.myProject.database.MestoDao;
 import it.engineering.myProject.domain.Mesto;
 import it.engineering.myProject.persistence.MyEntityManagerFactory;
 
-public class MestoCRUD {
+public class MestoCRUD implements MestoDao{
 	public List<Mesto>getMestoList(){
 		EntityManager em = MyEntityManagerFactory
 				.getEntityManagerFactory().createEntityManager();

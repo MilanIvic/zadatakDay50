@@ -6,11 +6,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.stereotype.Component;
+
 import it.engineering.myProject.action.AbstractAction;
 import it.engineering.myProject.constants.MyConstants;
 import it.engineering.myProject.domain.User;
 import it.engineering.myProject.storage.UserStorage;
-
+@Component
 public class LoginPostAction extends AbstractAction{
 
 	@Override
@@ -27,17 +29,17 @@ public class LoginPostAction extends AbstractAction{
 				//user.setPassword(null);
 				session.setAttribute("loginUser", loginUser);
 				System.out.println(session.getAttribute("loginUser"));
-				return MyConstants.PAGE_HOME;
+				return MyConstants.VIEW_HOME;
 			}
 			else {
 				request.setAttribute("error_message", "Korisnik je vec ulogovan!");
-				return MyConstants.PAGE_LOGIN;
+				return MyConstants.VIEW_LOGIN;
 			}
 			
 		}else {
 			//ubaciti poruku za korisnika
 			request.setAttribute("error_message", "Korisnik ne postoji!");
-			return MyConstants.PAGE_LOGIN;
+			return MyConstants.VIEW_LOGIN;
 		}
 	}
 

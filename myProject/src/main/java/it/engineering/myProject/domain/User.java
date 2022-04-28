@@ -42,7 +42,10 @@ public class User {
 		this.password = password;
 	}
 	
-
+	public void setId(long long1) {
+		this.uid = long1;
+		
+	}
 	public Long getUid() {
 		return uid;
 	}
@@ -93,6 +96,8 @@ public class User {
 	public String toString() {
 		return username;
 	}
+
+	
 	
 	
 }
